@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.urls import path
-from home import views
 from views.register import register_user
 from views.login import login_user, logout_user
 from views.dashboard import dashboard
@@ -17,6 +16,6 @@ urlpatterns = [
     path('quiz', get_data, name="get_data"),
     path('result', result, name="result"),
     path('check_answers', check_answers, name="check_answers"),
-    # path('entry', views.entry, name="entry"),
     path('previous_score', previous, name="previous_score"),
+    # path('entry', views.entry, name="entry"),
     ]

@@ -60,7 +60,6 @@ def dashboard(request):
             # code for displaying the quiz according to user input
             match table:
                 case "Gk":
-                    print(table)
                     data_fetch(Gk)
                     return redirect("get_data")
                 case "Computer":

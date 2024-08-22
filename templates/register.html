@@ -8,11 +8,11 @@
             <form action="/" method="POST">
                 {% csrf_token %}
                 <label for="username">Enter Username</label>
-                <input type="text" name="name" placeholder="Enter Username">
+                <input type="text" name="name" placeholder="Enter Username" required="required">
                 <label for="password1">Enter Password</label>
-                <input type="password" name="passwd1" placeholder="Enter desired Password">
+                <input type="password" name="passwd1" placeholder="Enter desired Password" required="required">
                 <label for="password2">Repeat above password</label>
-                <input type="password" name="passwd2" placeholder="Repeat above password">
+                <input type="password" name="passwd2" placeholder="Repeat above password" required="required">
                 <button type="submit" class="submit">Register</button>
             </form>
         </div>

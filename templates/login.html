@@ -8,9 +8,9 @@
             <form action="login" method="POST">
                 {% csrf_token %}
                 <label for="username">Enter Username</label>
-                <input type="text" name="name" placeholder="Enter Username">
+                <input type="text" name="name" placeholder="Enter Username" required="required">
                 <label for="password">Enter Password</label>
-                <input type="password" name="password" placeholder="Enter your Password">
+                <input type="password" name="password" placeholder="Enter your Password" required="required">
                 <button type="submit" class="submit">login</button>
             </form>
         </div>

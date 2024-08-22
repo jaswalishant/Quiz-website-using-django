@@ -2,8 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
+
+# model for storing scores
 class UserScore(models.Model):
-    user=models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    user=models.OneToOneField(User, null=True, on_delete=models.CASCADE)   # making connection with user table 
     usern=models.CharField(max_length=120, null=True)
     gk=models.CharField(max_length=120, null=True)
     computer=models.CharField(max_length=120, null=True)
@@ -14,6 +16,8 @@ class UserScore(models.Model):
     def __str__(self):
         return self.usern
     
+
+# models for questions and options
 class Gk(models.Model):
     id=models.BigAutoField(primary_key=True)
     question=models.CharField(max_length=400, null=False)

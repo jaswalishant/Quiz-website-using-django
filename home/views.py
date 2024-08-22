@@ -1,6 +1,4 @@
-from django.shortcuts import render, redirect
-# from django.contrib.auth.models import User
-from home.models import UserScore, Gk, Computer, Animal, Sport, Science
+from django.shortcuts import render
 
 # Create your views here.
 
