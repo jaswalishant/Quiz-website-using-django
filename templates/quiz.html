@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load my_tags %}
+
+{% block title %}quiz{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <form action="result", method="POST">
+        {% csrf_token %}
+    <ol>
+        {% for i in numbers %}
+        <p>
+        <li style="font-size: 20px;">
+            {{question|index:forloop.counter0}}<br> 
+            {% for value in option|index:forloop.counter0%}
+            <label>
+                <input type="radio" name="option{{i}}" value="{{value}}">{{value}}<br> 
+            </label>
+            {% endfor %}
+        </li>
+        </p>
+            {% endfor %}
+        </ol>
+        <div class="login_link" style="width: 50%; margin-left:25%">
+                {% csrf_token %}
+                <button type="submit" class="submit">Submit</button>
+        </div>
+        </form>
+</div>
+{% endblock body %}

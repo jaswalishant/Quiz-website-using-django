@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load my_tags %}
+{% block title %}Correct Answers{% endblock title %}
+{% block body %}
+<div class="container">
+    <div class="list">
+        <ol>
+            {% for i in numbers %}
+            <p>
+                <li>
+                    {{question|index:forloop.counter0}}<br>
+                    Ans. {{answer|index:forloop.counter0}}<br>
+                </li>
+            </p>
+            {% endfor %}
+        </ol>
+        <div class="login_link">
+            <form action="dashboard">
+                {% csrf_token %}
+                <button type="submit" class="submit">Go To Dashboard</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock body %}

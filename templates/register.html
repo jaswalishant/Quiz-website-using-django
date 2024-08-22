@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock title %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="form">
+            <h2>Register Here</h2>
+            <form action="/" method="POST">
+                {% csrf_token %}
+                <label for="username">Enter Username</label>
+                <input type="text" name="name" placeholder="Enter Username">
+                <label for="password1">Enter Password</label>
+                <input type="password" name="passwd1" placeholder="Enter desired Password">
+                <label for="password2">Repeat above password</label>
+                <input type="password" name="passwd2" placeholder="Repeat above password">
+                <button type="submit" class="submit">Register</button>
+            </form>
+        </div>
+        <div class="login_link">
+            <p style="color: red; font-size: 20px; margin: 10px 0">{{msg}}</p>
+            <p>Already a user?</p>
+            <p>Login Here</p>
+            <a href="login"><button type="submit" class="submit">Login</button></a>
+        </div>
+    </div>
+</div>
+{% endblock body %}

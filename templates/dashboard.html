@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load my_tags %}
+{% block title %}Dashboard{% endblock title %}
+{% block body %}
+<div class="container">
+    <div class="row">
+
+        <h2>Welcome {{name}}!</h2>
+        {% for i in numbers %}
+            <div class="login_link">
+                <form action="dashboard" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="submit" name="table_name"  value="{{lst|index:forloop.counter0}}">{{lst|index:forloop.counter0}}</button>
+                </form>
+            </div>
+        {% endfor %}
+        
+        <div class="login_link">
+            <form action="previous_score" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="submit">Check scores</button>
+            </form>
+            <form action="logout" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="submit">logout</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load my_tags %}
+{% block title %}Previous Scores{% endblock title %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="score">
+            <h2>Your previous scores are:</h2>
+            {% for i in numbers %}
+            <p>Your score in {{columns|index:forloop.counter0}} is : {{scores|index:forloop.counter0}}</p>
+            {% endfor %}
+        </div>
+        <div class="login_link">
+        <form action="dashboard" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="submit">Go To Dashboard</button>
+        </form>
+    </div>
+    </div>
+</div>
+
+{% endblock body %}
